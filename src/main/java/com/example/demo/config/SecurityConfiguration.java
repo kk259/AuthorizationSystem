@@ -45,30 +45,6 @@ public class SecurityConfiguration {
                 .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
-                /*http
-                .csrf()
-                .disable()
-                .authorizeHttpRequests(WHITE_LIST_URL)
-                .requestMatchers("/api/v1/auth/**")
-                .permitAll()
-                 //.hasAnyRole(ADMIN.name(), MANAGER.name())
-                 .anyRequest()
-                 .authenticated()
-                .and()
-                .sessionManagement()
-                        .sessionCreationPolicy(STATELESS)
-                        .and()
-                .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);*/
         return http.build();
     }
 }
-/*
-.requestMatchers( new AntPathRequestMatcher("/api/v1/demo-controller/greet/admin")).hasAnyRole(Role.ADMIN.name())
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/demo-controller/greet/admin","GET")).hasAnyAuthority(ADMIN_FULL_ACCESS.getPermission())
-                                .requestMatchers( new AntPathRequestMatcher("/api/v1/demo-controller/greet/adminOrUser")).hasAnyRole(Role.ADMIN.name(),Role.USER.name())
-                                .requestMatchers(new AntPathRequestMatcher( "/api/v1/demo-controller/greet/adminOrUser","GET")).hasAnyAuthority(ADMIN_FULL_ACCESS.name(), USER_READ.name())
-
-
-
- */
