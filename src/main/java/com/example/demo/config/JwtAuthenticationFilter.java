@@ -1,5 +1,6 @@
 package com.example.demo.config;
 
+import com.example.demo.user.User;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
